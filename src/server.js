@@ -1,7 +1,5 @@
 import express from 'express';
 import studentRoutes from "./routes/studentRoutes.js";
-import dotenv from "dotenv";
-
 
 const app = express();
 const port = 8080;

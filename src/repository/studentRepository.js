@@ -66,6 +66,7 @@ export const addScore = async (id, exam, score) => {
 export const findByName = async (name) => {
     await connect();
     return await collection.find({name: {$regex: `^${name}$`, $options: 'i'}}).toArray();
+    //найди нэйм, но игнорируй регистр
 }
 
 // export const countByNames = (names) => {
