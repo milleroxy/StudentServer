@@ -3,19 +3,20 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "nodemon stc/server.js",
-    "dev-express": "node src/server.js"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "rox",
+  "author": "edward",
   "license": "ISC",
   "description": "student web service",
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0"
   },
-  "Devdependencies": {
+  "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
