@@ -34,7 +34,6 @@ export const updateStudent = async (id, data) => {
 }
 
 export const addScore = async (id, exam, score) => {
-    await connect();
     return await collection.findOneAndUpdate(
         {_id: id},
         {$set: {[`scores.${exam}`]: score}},
@@ -46,11 +45,18 @@ export const findByName = async (name) => {
     //найди нэйм, но игнорируй регистр
 }
 
-// export const countByNames = (names) => {
-//     names = names.map(name => name.toLowerCase());
-//     return Array.from(students.values()).filter(s => names.includes(s.name.toLowerCase())).length;
-// }
-//
-// export const findByMinScore = (exam, minScore) => {
-//     return Array.from(students.values()).filter(s => s.scores[exam] >= minScore);
-// }
+export const countByNames = async (names) => {
+    const lowerNames = names.map(n => n.toLowerCase());
+    return await collection.countDocuments({
+        $expr: {
+            $in: [{$toLower: '$name'}, lowerNames]
+        }
+    });
+}
+
+export const findByMinScore = async (exam, minScore) => {
+    const query = {};
+    query[`scores.${exam}`] = { $gte: minScore };
+    return await collection.find(query).toArray();
+
+}
