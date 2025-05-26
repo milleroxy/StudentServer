@@ -20,7 +20,7 @@ export const findStudent = async (id) => {
     return await collection.findOne({_id: id});
 }
 
-export const deleteStudent = async (id) => {    ;
+export const deleteStudent = async (id) => {
     return await collection.findOneAndDelete({_id: id});
     //найти и удалить
 }
