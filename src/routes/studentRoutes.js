@@ -1,6 +1,6 @@
 import express from "express";
 import {
-    addStudent, findStudent, deleteStudent, updateStudent, addScore, findByName, countByNames, findByMinScore
+    addStudent, findStudent, deleteStudent, updateStudent, addScore, findByName, findByMinScore, countByNames
 } from "../controller/studentController.js";
 
 const router = express.Router();

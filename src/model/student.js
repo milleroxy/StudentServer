@@ -18,6 +18,6 @@ const studentSchema = new mongoose.Schema({
     }
 })
 
-const Student = mongoose.model('Student', studentSchema, 'college');
+const Student = mongoose.model('Student', studentSchema, 'students');
 //обязательно указать коллекцию. у нас college
 export default Student;
