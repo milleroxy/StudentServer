@@ -1,4 +1,5 @@
 import * as repo from '../repository/studentRepository.js'
+
 export const addStudent = async ({id, name, password}) => {
     const existing = await repo.findById(id);
     if (existing) {

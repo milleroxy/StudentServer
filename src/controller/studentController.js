@@ -70,5 +70,6 @@ export const countByNames = async (req, res) => {
 
 export const findByMinScore = async (req, res) => {
         const students = await service.findByMinScore(req.params.exam, +req.params.minScore);
+    student.password = undefined;
         res.json(students);
     }
